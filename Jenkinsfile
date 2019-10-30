@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'https://hub.docker.com/r/sbiyyala/k8s-demo'
-    }
-
-  }
+  agent any
   stages {
     stage('Initialize') {
       steps {
