@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'docker'
+    docker {
+      image 'https://hub.docker.com/r/sbiyyala/k8s-demo'
     }
 
   }
@@ -11,5 +11,10 @@ pipeline {
         sh 'echo "Hello world, shishir!"'
       }
     }
+  }
+  environment {
+    UNIQUE_IMAGE_TAG = 'latest'
+    UNIQUE_IMAGE_NAME = 'k8sdemo'
+    SHOULD_BUILD = 'false'
   }
 }
