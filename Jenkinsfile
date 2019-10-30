@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'https://docker-repo.vpc.locusdev.net/web/django_service_example:k8s-deploy'
-    }
-
-  }
+  agent any
   stages {
     stage('Initialize') {
       steps {
